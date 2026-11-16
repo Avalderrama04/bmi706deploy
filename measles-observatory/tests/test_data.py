@@ -17,11 +17,19 @@ class DataTests(unittest.TestCase):
         for value in ['101','-1','NaN','Infinity','abc']:
             with self.subTest(value=value),self.assertRaises(ValueError):
                 validate_csv(f'country,iso3,year,mcv1\nIndia,IND,2025,{value}\n')
-    def test_demo_is_valid(self):
-        path=Path(__file__).resolve().parents[1]/'dist/demo.csv'
+    def test_who_dataset_is_valid(self):
+        path=Path(__file__).resolve().parents[1]/'dist/who_measles.csv'
         rows=validate_csv(path.read_text())
-        self.assertGreater(len(rows),3000)
-        self.assertTrue(all(r['year']>=1980 for r in rows))
+        self.assertGreater(len(rows),5000)
+        self.assertGreater(len({r['iso3'] for r in rows}),150)
+        nga=next(r for r in rows if r['iso3']=='NGA' and r['year']==2023)
+        self.assertEqual((nga['incidence'],nga['mcv1'],nga['mcv2']),(88.4,54,33))
+    def test_official_aggregates_present(self):
+        import csv
+        path=Path(__file__).resolve().parents[1]/'dist/who_measles_official.csv'
+        rows=list(csv.DictReader(path.open()))
+        self.assertEqual({r['region'] for r in rows},{'GLOBAL','AFRO','AMRO','EMRO','EURO','SEARO','WPRO'})
+        self.assertTrue(all(r['incidence'] for r in rows))
     def test_requires_observations(self):
         with self.assertRaises(ValueError):
             validate_csv('country,iso3,year,mcv1\nIndia,IND,2025,\n')

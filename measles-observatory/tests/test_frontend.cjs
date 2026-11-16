@@ -1,7 +1,7 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const context=vm.createContext({console,Set,Map,Number,Object});
 vm.runInContext(fs.readFileSync(__dirname+'/../dist/assets/d3.min.js','utf8'),context);
-const app=fs.readFileSync(__dirname+'/../dist/app.js','utf8').split("$('#upload').onclick=")[0];
+const app=fs.readFileSync(__dirname+'/../dist/app.js','utf8').split("document.querySelectorAll('.tab').forEach(b=>b.onclick")[0];
 vm.runInContext(app,context);
 const run=code=>vm.runInContext(code,context);
 assert.equal(run("aggregate([{population:100,mcv1:50},{population:300,mcv1:100}]).mcv1"),87.5);
@@ -16,4 +16,5 @@ assert.throws(()=>run("parseCSV('country,iso3,year,mcv1\\nIndia,IND,2025,80\\nIn
 assert.throws(()=>run("parseCSV('country,iso3,year,mcv1\\nIndia,IND,2025,NaN')"),/numeric/);
 assert.throws(()=>run("parseCSV('country,iso3,year,mcv1\\nIndia,IND,2025,')"),/No numeric/);
 assert.equal(run("completeYears([{year:2020,mcv1:80},{year:2022,mcv1:90}],2020,2022)[1].mcv1"),undefined);
-console.log('12 frontend data checks passed');
+assert.equal(run("aggregate([{mcv1:10},{mcv1:20},{mcv1:90}]).mcv1"),20);
+console.log('13 frontend data checks passed');

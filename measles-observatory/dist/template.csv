@@ -1,10 +1,13 @@
 country,iso3,year,population,cases,incidence,mcv1,mcv2,region,income_group,development_status,gavi_eligible
-Nigeria,NGA,2023,69413080,6521,93.945,71.3,65.9,AFRO,Upper middle income,Economy in transition,false
-Nigeria,NGA,2024,70169626,1892,26.963,71.7,66.5,AFRO,Upper middle income,Economy in transition,false
-Nigeria,NGA,2025,70926172,1430,20.162,72.3,67.3,AFRO,Upper middle income,Economy in transition,false
-Brazil,BRA,2023,53922197,4669,86.588,80.7,75.3,AMRO,Low income,Developing,true
-Brazil,BRA,2024,54509904,1471,26.986,80.2,75.0,AMRO,Low income,Developing,true
-Brazil,BRA,2025,55097612,1502,27.261,80.0,75.0,AMRO,Low income,Developing,true
-India,IND,2023,46928927,4368,93.077,73.8,68.4,SEARO,Upper middle income,Developing,false
-India,IND,2024,47440414,1322,27.867,74.0,68.8,SEARO,Upper middle income,Developing,false
-India,IND,2025,47951901,1070,22.314,74.5,69.5,SEARO,Upper middle income,Developing,false
+Brazil,BRA,2022,,,0.2,81,58,AMRO,Upper middle income,Developing,false
+Brazil,BRA,2023,,,0,90,69,AMRO,Upper middle income,Developing,false
+Brazil,BRA,2024,,,0,96,81,AMRO,Upper middle income,Developing,false
+Brazil,BRA,2025,,,0.2,90,76,AMRO,Upper middle income,Developing,false
+India,IND,2022,,,28.7,95,90,SEARO,Lower middle income,Developing,true
+India,IND,2023,,,45.3,93,90,SEARO,Lower middle income,Developing,true
+India,IND,2024,,,12.8,97,92,SEARO,Lower middle income,Developing,true
+India,IND,2025,,,12.3,98,95,SEARO,Lower middle income,Developing,true
+Nigeria,NGA,2022,,,107.5,51,30,AFRO,Lower middle income,Developing,false
+Nigeria,NGA,2023,,,88.4,54,33,AFRO,Lower middle income,Developing,false
+Nigeria,NGA,2024,,,64.5,57,35,AFRO,Lower middle income,Developing,false
+Nigeria,NGA,2025,,,89.5,56,35,AFRO,Lower middle income,Developing,false

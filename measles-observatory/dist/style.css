@@ -36,3 +36,31 @@ select:hover{border-color:#9cc6b9}
 #year::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:white;border:4px solid var(--teal);box-shadow:0 2px 8px rgba(24,61,58,.25)}
 #year::-moz-range-track{background:transparent}
 @media(max-width:700px){.toolbar select{min-width:0;width:100%}.year-control strong{font-size:24px}}
+
+/* Regional comparison: two-handle year range */
+.range-control{flex-direction:column;gap:10px;min-width:340px}
+.range-control .picker-label strong{font:700 18px Manrope,sans-serif;color:var(--ink);letter-spacing:-.3px;margin-left:8px}
+.dual-range{position:relative;height:28px;width:100%}
+.dual-track{position:absolute;left:0;right:0;top:9px;height:10px;border-radius:999px;background:linear-gradient(to right,#e1e8e4 var(--a,0%),var(--teal) var(--a,0%),#3aa391 var(--b,100%),#e1e8e4 var(--b,100%))}
+.dual-range input{position:absolute;inset:0;width:100%;height:28px;margin:0;background:none;-webkit-appearance:none;appearance:none;pointer-events:none;z-index:2}
+.dual-range input::-webkit-slider-runnable-track{background:none;height:28px}
+.dual-range input::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:26px;height:26px;margin-top:1px;border-radius:50%;background:white;border:4px solid var(--teal);box-shadow:0 2px 8px rgba(24,61,58,.25);cursor:grab;transition:transform .15s}
+.dual-range input::-webkit-slider-thumb:hover{transform:scale(1.12)}
+.dual-range input:active::-webkit-slider-thumb{cursor:grabbing}
+.dual-range input::-moz-range-track{background:none}
+.dual-range input::-moz-range-thumb{pointer-events:auto;width:18px;height:18px;border-radius:50%;background:white;border:4px solid var(--teal);box-shadow:0 2px 8px rgba(24,61,58,.25);cursor:grab}
+@media(max-width:700px){.range-control{min-width:100%}}
+
+/* Regional locator map */
+.region-locator{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0}
+#regionMap{width:300px;max-width:100%;height:auto;display:block}
+.rm-country{stroke:#fff;stroke-width:.3;transition:opacity .15s;cursor:pointer}
+.rm-country.dim{opacity:.15}
+.rm-country.hot{stroke:#173f3c;stroke-width:.5}
+.region-locator-note{font-size:10px;color:var(--muted);min-height:14px}
+.mini{transition:border-color .15s,box-shadow .15s;outline:none}
+.mini h3::before{content:'';display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--region);margin-right:6px;vertical-align:0}
+.mini.linked{border-color:var(--region);box-shadow:0 0 0 2px var(--region)}
+#vaccineBars rect,#incidenceBars rect{transition:opacity .15s}
+.bar-faded{opacity:.2}
+@media(max-width:700px){.region-locator{align-items:stretch;width:100%}}

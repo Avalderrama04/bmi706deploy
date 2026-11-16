@@ -58,6 +58,11 @@ def validate_csv(text):
     return result
 
 class Handler(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        # Make the browser re-check files on every load so edits show up without a hard refresh.
+        self.send_header('Cache-Control', 'no-cache')
+        super().end_headers()
+
     def do_POST(self):
         if self.path != '/api/validate':
             self.send_error(404)

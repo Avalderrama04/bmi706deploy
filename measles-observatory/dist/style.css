@@ -101,3 +101,11 @@ select:hover{border-color:#9cc6b9}
 .country.linked{stroke:#173f3c;stroke-width:1.6}
 @media(max-width:1200px){.map-layout.compare{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.map-layout.compare .filters{grid-column:1/-1}}
 @media(max-width:700px){.map-layout.compare{grid-template-columns:1fr}}
+.tip-hint{display:block;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.18);font-size:11px;color:#9fd6c9}
+/* Data source inline after the intro sentence */
+.intro p{margin-bottom:26px}
+.source{color:var(--muted)}
+.source strong{color:var(--ink);font-weight:600}
+.source .sep{margin:0 10px;color:#b9c7c1}
+.region-chip::before{content:'';display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--region);margin-right:6px;vertical-align:0}
+.chip.region-chip.on::before{box-shadow:0 0 0 1.5px white}

@@ -16,6 +16,7 @@ Open http://127.0.0.1:8000 and press Ctrl+C to stop. No package installation is 
 - **Global map:** choose measles incidence or vaccination coverage (with an MCV1/MCV2 dose toggle); scrub or play years; zoom and pan; filter by income group, Gavi eligibility and development status. Hover or keyboard-focus a country for its values, and click or press Enter to open its trends.
 - **Trends per country:** choose a country to see separate coverage and incidence panels. Brush the lower timeline to focus on a period; the stat cards show the last year of the selection (or the latest year when nothing is selected).
 - **Regional comparison:** pick any combination of Global and the six WHO regions (one chart each) and a start/end year. Trajectory charts show MCV1 (left axis, %) and incidence (right axis, per million). The stat cards and the vaccination (%) and incidence (cases per 100,000) bar charts use the end year.
+  - Gavi is a global health organization that helps lower-income countries improve access to vaccines, including the measles vaccine.
 
 ## Data
 
